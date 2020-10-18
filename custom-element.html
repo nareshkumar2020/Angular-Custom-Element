@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Custom Elements </title>
+	<script src="./custom-button-element.js"></script>
+</head>
+
+<body>
+
+	<div style="margin:20px;padding:10px;text-align: center;">
+		<h3>Parent App</h3>
+		<input id="input" placeholder="Enter id" />
+		<button onClick="pushToCustom()" type="submit">Push</button>
+		<div
+			style="border:0.5px solid;border-radius:4px;justify-content:center;align-items:center;text-align:center;margin:20px;">
+			<app-button label="First label"></app-button>
+			<br />
+		</div>
+		<div>
+			<h4 id="output" style="word-wrap: break-word;"></h4>
+		</div>
+	</div>
+
+</body>
+
+<script>
+	const inputElement = document.querySelector('#input');
+	const outputElement = document.querySelector('#output');
+	const button = document.querySelector('app-button');
+
+	button.addEventListener('outputFromCustom', (event) => {
+		if (event.detail)
+			outputElement.innerHTML = event.detail;
+		// alert(event.detail);
+	});
+
+	function pushToCustom() {
+		button.clinicalID = inputElement.value;
+	}
+</script>
+
+</html>

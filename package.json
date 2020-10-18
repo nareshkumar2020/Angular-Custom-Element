@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --output-hashing=none",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "package": "jscat ./dist/sample-custom-element/runtime.js ./dist/sample-custom-element/polyfills.js ./dist/sample-custom-element/main.js > custom-button-element.js"
   },
   "private": true,
   "dependencies": {
@@ -15,10 +16,13 @@
     "@angular/common": "~10.1.3",
     "@angular/compiler": "~10.1.3",
     "@angular/core": "~10.1.3",
+    "@angular/elements": "^10.1.5",
     "@angular/forms": "~10.1.3",
     "@angular/platform-browser": "~10.1.3",
     "@angular/platform-browser-dynamic": "~10.1.3",
     "@angular/router": "~10.1.3",
+    "document-register-element": "^1.7.2",
+    "jscat": "0.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

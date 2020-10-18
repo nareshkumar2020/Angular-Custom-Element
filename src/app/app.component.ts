@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample-custom-element';
+  clinicalIDParent = 200;
+  clinicalID;
+
+  valueChanged(event) {
+    this.clinicalID = this.clinicalIDParent;
+  }
 }
